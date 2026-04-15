@@ -25,6 +25,8 @@ ul{margin:8px 0 16px 20px;color:var(--text2)}
 li{margin-bottom:6px}
 code{font-family:monospace;font-size:13px;background:var(--border);padding:1px 5px;border-radius:4px;color:var(--text)}
 hr{border:none;border-top:1px solid var(--border);margin:36px 0}
+.note{background:#fff8e1;border-left:4px solid #f5a623;border-radius:0 var(--r) var(--r) 0;padding:12px 16px;margin:12px 0;font-size:13px;color:#7a5500;line-height:1.6}
+@media(prefers-color-scheme:dark){.note{background:#2a1f00;color:#ffd680;border-color:#f5a623}}
 .cms{display:flex;flex-direction:column;gap:12px;margin-top:12px}
 .cm{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:8px}
 .ci{font-size:20px;flex-shrink:0}
@@ -36,7 +38,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 .social-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
 .social-btn{display:inline-flex;align-items:center;gap:7px;padding:8px 14px;border-radius:8px;border:1px solid var(--border);background:var(--bg);color:var(--text);font-size:13px;font-weight:500;text-decoration:none;transition:background .15s}
 .social-btn:hover{background:var(--border)}
-.freelancer-box{background:#e8f0fb;border-left:4px solid #0066cc;border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:20px 0;font-size:14px;color:#003d7a;line-height:1.6}
+.freelancer-box{background:#e8f0fb;border-left:4px solid #0066cc;border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:16px 0;font-size:14px;color:#003d7a;line-height:1.6}
 @media(prefers-color-scheme:dark){.freelancer-box{background:#0d1f33;color:#7ec4ff;border-color:#4da3ff}}
 footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text2);text-align:center}
 </style>
@@ -56,70 +58,151 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
       <line x1="18" y1="11" x2="21" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
     </svg>
   </div>
-  <div><div class="logo-name">PexXel Clarity Engine</div><div class="logo-by">by PexXel Team &mdash; Raphael Ordson</div></div>
+  <div>
+    <div class="logo-name">PexXel Clarity Engine</div>
+    <div class="logo-by">by PexXel Team &mdash; Raphael Ordson</div>
+  </div>
 </div>
 
 <h1>Privacy Policy</h1>
 <p class="upd">Last updated: April 15, 2026</p>
 
-<div class="intro"><strong>Short version:</strong> PexXel Clarity Engine does not collect, store, sell, or share any personal data. All visual processing happens locally on your device using your GPU. We never see your browsing activity.</div>
+<div class="intro">
+  <strong>Short version:</strong> PexXel Clarity Engine applies visual filters locally on your device. We collect no browsing data. To verify your license we use your Google account email. Payments are handled entirely by Stripe &mdash; we never see your card details.
+</div>
 
 <h2>1. Who we are</h2>
-<p>PexXel Clarity Engine is a Chrome browser extension developed by <strong>Raphael Ordson</strong>, operating as <strong>PexXel Team</strong>. Contact: <a href="mailto:pexxelteam@gmail.com" style="color:var(--accent)">pexxelteam@gmail.com</a></p>
+<p>PexXel Clarity Engine ("the extension", "we", "us") is a Chrome browser extension developed by <strong>Raphael Ordson</strong>, operating as <strong>PexXel Team</strong>.</p>
+<p>Contact: <a href="mailto:pexxelteam@gmail.com" style="color:var(--accent)">pexxelteam@gmail.com</a></p>
 
 <h2>2. Data we do NOT collect</h2>
 <p>The extension does <strong>not</strong> collect or transmit:</p>
 <ul>
-<li>Your browsing history or visited URLs</li>
-<li>Page content, text, or images from any website</li>
-<li>Personally identifiable information (name, email, location, IP address)</li>
-<li>Login credentials or form data</li>
-<li>Financial or payment information</li>
-<li>Web browsing activity of any kind</li>
+  <li>Your browsing history or visited URLs</li>
+  <li>Page content, text, images, or any data from websites you visit</li>
+  <li>Passwords, form data, or login credentials</li>
+  <li>Your IP address or precise location</li>
+  <li>Any personally identifiable information beyond your Google account email (used solely for license verification &mdash; see Section 5)</li>
 </ul>
 
-<h2>3. What is stored locally</h2>
-<p>The extension stores only preferences locally using <code>chrome.storage.local</code>: your selected profile, on/off state, and an anonymous random client ID for GA4 event counting only &mdash; never linked to your identity.</p>
+<h2>3. Data stored locally on your device</h2>
+<p>The extension stores the following in <code>chrome.storage.local</code> on your device only:</p>
+<ul>
+  <li>Your selected enhancement profile (e.g. Balanced, Cinema)</li>
+  <li>Whether the extension is enabled or disabled</li>
+  <li>An anonymous randomly generated client ID used solely for Google Analytics 4 event counting</li>
+  <li>A cached license status (licensed / trial days remaining) refreshed at least every hour</li>
+</ul>
+<p>None of this data is shared with any third party except as described in Sections 4 and 5.</p>
 
 <h2>4. Anonymous usage analytics (Google Analytics 4)</h2>
-<p>The extension uses GA4 Measurement Protocol for anonymous aggregated statistics. Sent: a random non-identifiable client ID, session ID (resets on browser close), anonymous event names only (installed, profile selected, toggle used, popup opened). No URLs, no page content, no personal data. Sent via HTTPS to <code>www.google-analytics.com</code>. Google privacy policy: <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></p>
-
-<h2>5. How the extension works</h2>
-<p>PexXel Clarity Engine applies GPU-accelerated CSS filters and SVG convolution matrices (Unsharp Mask) directly in your browser. All processing happens entirely on your device. No page content is ever read, copied, or transmitted to any server.</p>
-
-<h2>6. Permissions explained</h2>
+<p>We use Google Analytics 4 Measurement Protocol to collect anonymous, aggregated usage statistics to help improve the extension. What is sent:</p>
 <ul>
-<li><strong>activeTab</strong> &mdash; Apply visual filters to the active tab only when you interact with the extension</li>
-<li><strong>storage</strong> &mdash; Save your profile preferences locally on your device</li>
-<li><strong>scripting</strong> &mdash; Inject the GPU filter engine into web pages</li>
+  <li>A random non-identifiable client ID (generated locally, no link to your identity)</li>
+  <li>Session ID (resets when you close Chrome)</li>
+  <li>Anonymous event names only: extension installed, profile selected, toggle used, popup opened</li>
+  <li>No URLs, no page content, no personal data</li>
 </ul>
-<p>Minimum permissions only. No host_permissions, no browsing history access.</p>
+<p>Data is sent via HTTPS to <code>www.google-analytics.com</code>. Google's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></p>
 
-<h2>7. Third-party services</h2>
-<p>The extension contains optional donation links. These are only activated if you choose to click them. The extension itself does not share any data with these services:</p>
+<h2>5. Google account email &mdash; license verification</h2>
+<p>PexXel Clarity Engine includes a 7-day free trial. After the trial period, a one-time lifetime license fee of <strong>&pound;5 GBP</strong> is required to continue using the extension.</p>
+<p>To verify your license, the extension uses the <strong>Chrome Identity API</strong> (<code>chrome.identity</code>) to obtain your Google account email address. This email is used exclusively to:</p>
 <ul>
-<li><strong>Buy Me a Coffee</strong> &mdash; <a href="https://www.buymeacoffee.com/privacy" target="_blank" style="color:var(--accent)">buymeacoffee.com/privacy</a></li>
-<li><strong>PayPal</strong> &mdash; <a href="https://www.paypal.com/webapps/mpp/ua/privacy-full" target="_blank" style="color:var(--accent)">paypal.com privacy policy</a></li>
-<li><strong>Google Analytics 4</strong> &mdash; <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></li>
+  <li>Check your trial status against our license server (Cloudflare Worker)</li>
+  <li>Link your Stripe payment to your license so you can restore access on any device by signing in with the same Google account</li>
 </ul>
+<div class="note">
+  <strong>We do not store your email permanently.</strong> Your email is used as a lookup key in our license database (Cloudflare KV). We store only: your email (as a key), the date your trial started, and whether a valid payment has been made. No other personal data is stored. Your email is never sold, shared with advertisers, or used for marketing.
+</div>
+<p>The Chrome Identity API only requests your email address. We do not access your Google Drive, Gmail messages, contacts, or any other Google services.</p>
 
-<h2>8. Data use limitations</h2>
+<h2>6. Payments &mdash; Stripe</h2>
+<p>All payments are processed by <strong>Stripe</strong>, a PCI-DSS certified payment processor. When you purchase a license:</p>
 <ul>
-<li>Data use limited to providing and improving this extension only</li>
-<li>No data sold to third parties</li>
-<li>No data used for advertising or profiling</li>
-<li>No human access to any user data</li>
+  <li>You are redirected to a Stripe-hosted checkout page</li>
+  <li>Stripe collects your payment details (card number, billing address)</li>
+  <li><strong>We never see, store, or have access to your card details</strong></li>
+  <li>Stripe sends us a confirmation webhook containing only: your email address and a transaction ID</li>
+  <li>We use this to activate your license in our database</li>
+</ul>
+<p>Stripe's privacy policy: <a href="https://stripe.com/privacy" target="_blank" style="color:var(--accent)">stripe.com/privacy</a></p>
+<p>Stripe's security standards: <a href="https://stripe.com/docs/security" target="_blank" style="color:var(--accent)">stripe.com/docs/security</a></p>
+
+<h2>7. Trial period and license terms</h2>
+<ul>
+  <li><strong>Free trial:</strong> 7 days from first use, full functionality</li>
+  <li><strong>After trial:</strong> Extension functionality is disabled until a license is purchased</li>
+  <li><strong>License:</strong> One-time payment of &pound;5 GBP, lifetime access</li>
+  <li><strong>License binding:</strong> Tied to your Google account email &mdash; sign in with the same account on any device to restore access</li>
+  <li><strong>Trial counting:</strong> Trial days are tracked server-side (Cloudflare) and cannot be reset by reinstalling the extension</li>
+  <li><strong>Refunds:</strong> Contact us at <a href="mailto:pexxelteam@gmail.com" style="color:var(--accent)">pexxelteam@gmail.com</a> within 14 days of purchase</li>
 </ul>
 
-<h2>9. Children's privacy</h2>
-<p>Not directed at children under 13. No information knowingly collected from children.</p>
+<h2>8. How the extension works technically</h2>
+<p>PexXel Clarity Engine applies GPU-accelerated CSS filters and SVG convolution matrices (Unsharp Mask algorithm) directly in your browser. All visual processing occurs entirely on your device. No page content is ever read, copied, or transmitted to any server.</p>
 
-<h2>10. Changes to this policy</h2>
-<p>Material changes reflected in the updated date above. Continued use constitutes acceptance.</p>
+<h2>9. Chrome permissions explained</h2>
+<ul>
+  <li><strong>activeTab</strong> &mdash; Apply visual filters to the currently active tab when you interact with the extension</li>
+  <li><strong>storage</strong> &mdash; Save your profile preferences and license cache locally on your device</li>
+  <li><strong>scripting</strong> &mdash; Inject the GPU filter engine into web pages</li>
+  <li><strong>identity</strong> &mdash; Obtain your Google account email for license verification only (see Section 5)</li>
+</ul>
+<p>We request only the minimum permissions necessary. We do not request broad host permissions or access to your browsing history.</p>
+
+<h2>10. Cloudflare Workers &mdash; license server</h2>
+<p>Our license verification server runs on <strong>Cloudflare Workers</strong>, a serverless compute platform. When the extension checks your license status or processes a payment confirmation, a request is sent to our Cloudflare Worker at:</p>
+<p><code>https://oce-license-api.mr-orda-uk.workers.dev</code></p>
+<p>This server receives your Google email address and returns your license status. Cloudflare may process this request in accordance with their privacy policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color:var(--accent)">cloudflare.com/privacypolicy</a></p>
+
+<h2>11. Third-party services summary</h2>
+<ul>
+  <li><strong>Google Analytics 4</strong> &mdash; Anonymous usage analytics &mdash; <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></li>
+  <li><strong>Google Identity (Chrome API)</strong> &mdash; Email for license verification &mdash; <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></li>
+  <li><strong>Stripe</strong> &mdash; Payment processing &mdash; <a href="https://stripe.com/privacy" target="_blank" style="color:var(--accent)">stripe.com/privacy</a></li>
+  <li><strong>Cloudflare Workers</strong> &mdash; License server &mdash; <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color:var(--accent)">cloudflare.com/privacypolicy</a></li>
+  <li><strong>Buy Me a Coffee</strong> &mdash; Optional donation &mdash; <a href="https://www.buymeacoffee.com/privacy" target="_blank" style="color:var(--accent)">buymeacoffee.com/privacy</a></li>
+  <li><strong>PayPal</strong> &mdash; Optional donation &mdash; <a href="https://www.paypal.com/webapps/mpp/ua/privacy-full" target="_blank" style="color:var(--accent)">paypal.com/privacy</a></li>
+</ul>
+
+<h2>12. Data use limitations (Chrome Web Store compliance)</h2>
+<p>In compliance with the <a href="https://developer.chrome.com/docs/webstore/program-policies/" target="_blank" style="color:var(--accent)">Chrome Web Store Developer Program Policies</a>:</p>
+<ul>
+  <li>All data collection and use is limited to the declared purposes in this policy</li>
+  <li>No data is sold or transferred to third parties for purposes unrelated to the extension</li>
+  <li>No data is used for advertising, profiling, or determining creditworthiness</li>
+  <li>No data is transferred in connection with mergers or acquisitions without prior user consent</li>
+  <li>Your Google email is used solely to verify your license status &mdash; nothing else</li>
+  <li>All data transmissions use HTTPS / modern cryptography</li>
+  <li>Financial and payment information is handled exclusively by Stripe and never disclosed publicly</li>
+</ul>
+
+<h2>13. Children's privacy</h2>
+<p>PexXel Clarity Engine is not directed at children under 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided personal information, please contact us and we will delete it immediately.</p>
+
+<h2>14. Data retention</h2>
+<ul>
+  <li><strong>Trial record</strong> (email + trial start date): retained for 90 days after trial expiry</li>
+  <li><strong>License record</strong> (email + activation date): retained for the lifetime of your license</li>
+  <li>You may request deletion at any time by contacting <a href="mailto:pexxelteam@gmail.com" style="color:var(--accent)">pexxelteam@gmail.com</a></li>
+</ul>
+
+<h2>15. Your rights</h2>
+<p>You have the right to:</p>
+<ul>
+  <li>Request access to data we hold about you</li>
+  <li>Request deletion of your data (trial record, license record)</li>
+  <li>Withdraw consent at any time by uninstalling the extension</li>
+</ul>
+<p>To exercise these rights, contact: <a href="mailto:pexxelteam@gmail.com" style="color:var(--accent)">pexxelteam@gmail.com</a></p>
+
+<h2>16. Changes to this policy</h2>
+<p>We will update the "Last updated" date when material changes are made. Continued use of the extension after changes constitutes acceptance of the updated policy.</p>
 
 <hr>
 
-<h2>11. Custom Development</h2>
+<h2>17. Custom Development</h2>
 <div class="freelancer-box">
   <strong>&#x1F6E0;&#xFE0F; Need a custom Chrome extension?</strong><br><br>
   As a freelancer, I offer custom plugin development to help you get exactly what you need. Let's discuss your project, and I'll provide a solution that works for you.
@@ -129,8 +212,8 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
 
 <hr>
 
-<h2>12. Contact &amp; Follow Us</h2>
-<p>Questions, privacy concerns, or data requests? Reach us via email or the support form. You can also follow PexXel Team on social media.</p>
+<h2>18. Contact &amp; Follow Us</h2>
+<p>Questions, privacy concerns, data requests, or support? Reach us through any of the following:</p>
 
 <div class="cms">
   <div class="cm">
@@ -166,7 +249,7 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
     TikTok
   </a>
   <a href="https://www.instagram.com/pexxelteam/" target="_blank" rel="noopener" class="social-btn">
-    <svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="ig" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#ig)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+    <svg width="18" height="18" viewBox="0 0 24 24"><defs><linearGradient id="ig2" x1="0%" y1="100%" x2="100%" y2="0%"><stop offset="0%" stop-color="#f09433"/><stop offset="50%" stop-color="#dc2743"/><stop offset="100%" stop-color="#bc1888"/></linearGradient></defs><path fill="url(#ig2)" d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
     Instagram
   </a>
   <a href="https://www.youtube.com/@PexXelTeam" target="_blank" rel="noopener" class="social-btn">
@@ -175,7 +258,7 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
   </a>
 </div>
 
-<footer>&copy; 2026 Raphael Ordson &middot; PexXel Team &middot; PexXel Clarity Engine<br>Free forever &mdash; No Ads &middot; No Tracking &middot; No Subscriptions</footer>
+<footer>&copy; 2026 Raphael Ordson &middot; PexXel Team &middot; PexXel Clarity Engine<br>Free trial &mdash; then &pound;5 GBP lifetime &mdash; No Ads &middot; No Tracking &middot; No Subscriptions</footer>
 </div>
 </body>
 </html>
