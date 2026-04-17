@@ -258,6 +258,23 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
   </a>
 </div>
 
+  <section class="section">
+      <h2>Technical Limitations</h2>
+    <p>Due to the nature of web technologies and the diverse security policies implemented by various websites, PexXel Clarity Engine may not apply enhancement filters on every page you visit. The following limitations are inherent to the browser and visited websites, not defects of the extension:</p>
+    <ul>
+          <li><strong>Content Security Policy (CSP)</strong> — Websites enforcing strict CSP directives may prevent injected SVG filters or inline styles from being applied.</li>
+        <li><strong>iframe sandboxing</strong> — Pages rendered inside sandboxed iframes (e.g. embedded third-party widgets, ad frames) are isolated from the extension's filter context.</li>
+        <li><strong>Cross-origin restrictions</strong>strong> — Some resources loaded from different origins are subject to SOP (Same-Origin Policy) and cannot be post-processed by CSS filters.</li>
+        <li><strong>DRM-protected content</strong> — Streaming services such as Netflix, Disney+, HBO Max, Amazon Prime Video, Apple TV+, and similar platforms use Encrypted Media Extensions (EME) to protect video content. The extension cannot apply any enhancement to DRM-protected video streams, as modifying them is technically blocked by the browser.</li>
+        <li><strong>Banking portals and payment gateways</strong> — For security reasons, many financial institutions implement aggressive content protection that prevents any external styling modifications.</li>
+        <li><strong>Browser-internal pages</strong>strong> — URLs starting with chrome://, chrome-extension://, about:, view-source:, and the Chrome Web Store itself are protected from content script injection by Chrome's security model. The extension is deliberately excluded from these pages.</li>
+        <li><strong>PDF viewers and media players</strong> — Native browser viewers for PDFs, videos, and images bypass the HTML rendering pipeline and therefore are not affected by the filters.</li>
+        <li><strong>Pages using canvas-rendered or WebGL content</strong> — Applications that render their entire UI inside a canvas element (e.g. some web games, design tools, or graphics editors) may not visually change because CSS filters on the HTML layer do not affect GPU-rendered canvas pixels identically.</li>
+    </ul>
+    <p>If you encounter a specific page where the extension does not work as expected, this is most likely due to one of the limitations above. We continuously work to expand compatibility where technically feasible and welcome feedback via our support channels.</p>
+  </section>section></p></strong></strong></li></li></strong></strong></li></li></strong></strong></li>
+    </ul></p></h2>
+
 <footer>&copy; 2026 Raphael Ordson &middot; PexXel Team &middot; PexXel Clarity Engine<br>Free trial &mdash; then &pound;5 GBP lifetime &mdash; No Ads &middot; No Tracking &middot; No Subscriptions</footer>
 </div>
 </body>
