@@ -11,8 +11,6 @@
 body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;background:var(--bg);color:var(--text);line-height:1.7;font-size:15px;padding:0 16px}
 .wrap{max-width:720px;margin:0 auto;padding:60px 0 80px}
 .logo-row{display:flex;align-items:center;gap:12px;margin-bottom:48px}
-.logo-icon{width:44px;height:44px;background:#0066cc;border-radius:12px;display:flex;align-items:center;justify-content:center}
-.logo-icon svg{color:#fff}
 .logo-name{font-size:16px;font-weight:700;color:var(--text)}
 .logo-by{font-size:12px;color:var(--text2)}
 h1{font-size:32px;font-weight:800;letter-spacing:-.5px;margin-bottom:8px}
@@ -29,7 +27,6 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 @media(prefers-color-scheme:dark){.note{background:#2a1f00;color:#ffd680;border-color:#f5a623}}
 .cms{display:flex;flex-direction:column;gap:12px;margin-top:12px}
 .cm{display:flex;align-items:flex-start;gap:12px;padding:12px 16px;background:var(--bg);border:1px solid var(--border);border-radius:8px}
-.ci{font-size:20px;flex-shrink:0}
 .ct{display:flex;flex-direction:column;gap:2px}
 .ct-t{font-size:13px;font-weight:600;color:var(--text)}
 .ct-d{font-size:12px;color:var(--text2)}
@@ -40,6 +37,7 @@ hr{border:none;border-top:1px solid var(--border);margin:36px 0}
 .social-btn:hover{background:var(--border)}
 .freelancer-box{background:#e8f0fb;border-left:4px solid #0066cc;border-radius:0 var(--r) var(--r) 0;padding:16px 20px;margin:16px 0;font-size:14px;color:#003d7a;line-height:1.6}
 @media(prefers-color-scheme:dark){.freelancer-box{background:#0d1f33;color:#7ec4ff;border-color:#4da3ff}}
+.section{margin-top:36px}
 footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-size:12px;color:var(--text2);text-align:center}
 </style>
 </head>
@@ -47,28 +45,17 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
 <div class="wrap">
 
 <div class="logo-row">
-  <div class="logo-icon">
-    <svg width="24" height="24" viewBox="0 0 22 22" fill="none">
-      <circle cx="11" cy="11" r="10" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="11" cy="11" r="5" stroke="currentColor" stroke-width="1.8"/>
-      <circle cx="11" cy="11" r="1.8" fill="currentColor"/>
-      <line x1="11" y1="1" x2="11" y2="4" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="11" y1="18" x2="11" y2="21" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="1" y1="11" x2="4" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-      <line x1="18" y1="11" x2="21" y2="11" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/>
-    </svg>
-  </div>
   <div>
     <div class="logo-name">PexXel Clarity Engine</div>
-    <div class="logo-by">by PexXel Team &mdash; Raphael Ordson</div>
+    <div class="logo-by">RAPHAEL ORDSON | PexXel Team</div>
   </div>
 </div>
 
 <h1>Privacy Policy</h1>
-<p class="upd">Last updated: April 15, 2026</p>
+<p class="upd">Last updated: April 17, 2026</p>
 
 <div class="intro">
-  <strong>Short version:</strong> PexXel Clarity Engine applies visual filters locally on your device. We collect no browsing data. To verify your license we use your Google account email. Payments are handled entirely by Stripe &mdash; we never see your card details.
+  <strong>Short version:</strong> PexXel Clarity Engine applies visual filters locally on your device. We collect no browsing data. To verify your license we use your email address (magic link verification). Payments are handled entirely by Stripe &mdash; we never see your card details.
 </div>
 
 <h2>1. Who we are</h2>
@@ -82,7 +69,7 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
   <li>Page content, text, images, or any data from websites you visit</li>
   <li>Passwords, form data, or login credentials</li>
   <li>Your IP address or precise location</li>
-  <li>Any personally identifiable information beyond your Google account email (used solely for license verification &mdash; see Section 5)</li>
+  <li>Any personally identifiable information beyond your email address (used solely for license verification &mdash; see Section 5)</li>
 </ul>
 
 <h2>3. Data stored locally on your device</h2>
@@ -105,17 +92,17 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
 </ul>
 <p>Data is sent via HTTPS to <code>www.google-analytics.com</code>. Google's privacy policy applies: <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></p>
 
-<h2>5. Google account email &mdash; license verification</h2>
+<h2>5. Email address &mdash; license verification</h2>
 <p>PexXel Clarity Engine includes a 7-day free trial. After the trial period, a one-time lifetime license fee of <strong>&pound;5 GBP</strong> is required to continue using the extension.</p>
-<p>To verify your license, the extension uses the <strong>Chrome Identity API</strong> (<code>chrome.identity</code>) to obtain your Google account email address. This email is used exclusively to:</p>
+<p>To verify your license, the extension asks you to enter your email address. A magic link is sent to this email for verification. Your email is used exclusively to:</p>
 <ul>
   <li>Check your trial status against our license server (Cloudflare Worker)</li>
-  <li>Link your Stripe payment to your license so you can restore access on any device by signing in with the same Google account</li>
+  <li>Link your Stripe payment to your license so you can restore access on any device by entering the same email address</li>
 </ul>
 <div class="note">
   <strong>We do not store your email permanently.</strong> Your email is used as a lookup key in our license database (Cloudflare KV). We store only: your email (as a key), the date your trial started, and whether a valid payment has been made. No other personal data is stored. Your email is never sold, shared with advertisers, or used for marketing.
 </div>
-<p>The Chrome Identity API only requests your email address. We do not access your Google Drive, Gmail messages, contacts, or any other Google services.</p>
+<p>We only use your email address for license verification. We do not access any other services or data associated with your email provider.</p>
 
 <h2>6. Payments &mdash; Stripe</h2>
 <p>All payments are processed by <strong>Stripe</strong>, a PCI-DSS certified payment processor. When you purchase a license:</p>
@@ -134,7 +121,7 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
   <li><strong>Free trial:</strong> 7 days from first use, full functionality</li>
   <li><strong>After trial:</strong> Extension functionality is disabled until a license is purchased</li>
   <li><strong>License:</strong> One-time payment of &pound;5 GBP, lifetime access</li>
-  <li><strong>License binding:</strong> Tied to your Google account email &mdash; sign in with the same account on any device to restore access</li>
+  <li><strong>License binding:</strong> Tied to your email address &mdash; enter the same email on any device to restore access</li>
   <li><strong>Trial counting:</strong> Trial days are tracked server-side (Cloudflare) and cannot be reset by reinstalling the extension</li>
   <li><strong>Refunds:</strong> Contact us at <a href="mailto:pexxelteam@gmail.com" style="color:var(--accent)">pexxelteam@gmail.com</a> within 14 days of purchase</li>
 </ul>
@@ -147,19 +134,17 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
   <li><strong>activeTab</strong> &mdash; Apply visual filters to the currently active tab when you interact with the extension</li>
   <li><strong>storage</strong> &mdash; Save your profile preferences and license cache locally on your device</li>
   <li><strong>scripting</strong> &mdash; Inject the GPU filter engine into web pages</li>
-  <li><strong>identity</strong> &mdash; Obtain your Google account email for license verification only (see Section 5)</li>
 </ul>
 <p>We request only the minimum permissions necessary. We do not request broad host permissions or access to your browsing history.</p>
 
 <h2>10. Cloudflare Workers &mdash; license server</h2>
 <p>Our license verification server runs on <strong>Cloudflare Workers</strong>, a serverless compute platform. When the extension checks your license status or processes a payment confirmation, a request is sent to our Cloudflare Worker at:</p>
-<p><code>https://oce-license-api.mr-orda-uk.workers.dev</code></p>
-<p>This server receives your Google email address and returns your license status. Cloudflare may process this request in accordance with their privacy policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color:var(--accent)">cloudflare.com/privacypolicy</a></p>
+<p><code>https://oce-license-api.pexxelteam.workers.dev</code></p>
+<p>This server receives your email address and returns your license status. Cloudflare may process this request in accordance with their privacy policy: <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color:var(--accent)">cloudflare.com/privacypolicy</a></p>
 
 <h2>11. Third-party services summary</h2>
 <ul>
   <li><strong>Google Analytics 4</strong> &mdash; Anonymous usage analytics &mdash; <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></li>
-  <li><strong>Google Identity (Chrome API)</strong> &mdash; Email for license verification &mdash; <a href="https://policies.google.com/privacy" target="_blank" style="color:var(--accent)">policies.google.com/privacy</a></li>
   <li><strong>Stripe</strong> &mdash; Payment processing &mdash; <a href="https://stripe.com/privacy" target="_blank" style="color:var(--accent)">stripe.com/privacy</a></li>
   <li><strong>Cloudflare Workers</strong> &mdash; License server &mdash; <a href="https://www.cloudflare.com/privacypolicy/" target="_blank" style="color:var(--accent)">cloudflare.com/privacypolicy</a></li>
   <li><strong>Buy Me a Coffee</strong> &mdash; Optional donation &mdash; <a href="https://www.buymeacoffee.com/privacy" target="_blank" style="color:var(--accent)">buymeacoffee.com/privacy</a></li>
@@ -173,7 +158,7 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
   <li>No data is sold or transferred to third parties for purposes unrelated to the extension</li>
   <li>No data is used for advertising, profiling, or determining creditworthiness</li>
   <li>No data is transferred in connection with mergers or acquisitions without prior user consent</li>
-  <li>Your Google email is used solely to verify your license status &mdash; nothing else</li>
+  <li>Your email is used solely to verify your license status &mdash; nothing else</li>
   <li>All data transmissions use HTTPS / modern cryptography</li>
   <li>Financial and payment information is handled exclusively by Stripe and never disclosed publicly</li>
 </ul>
@@ -202,9 +187,25 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
 
 <hr>
 
-<h2>17. Custom Development</h2>
+<h2>17. Technical Limitations</h2>
+<p>Due to the nature of web technologies and the diverse security policies implemented by various websites, PexXel Clarity Engine may not apply enhancement filters on every page you visit. The following limitations are inherent to the browser and visited websites, not defects of the extension:</p>
+<ul>
+  <li><strong>Content Security Policy (CSP)</strong> &mdash; Websites enforcing strict CSP directives may prevent injected SVG filters or inline styles from being applied.</li>
+  <li><strong>iframe sandboxing</strong> &mdash; Pages rendered inside sandboxed iframes (e.g. embedded third-party widgets, ad frames) are isolated from the extension's filter context.</li>
+  <li><strong>Cross-origin restrictions</strong> &mdash; Some resources loaded from different origins are subject to SOP (Same-Origin Policy) and cannot be post-processed by CSS filters.</li>
+  <li><strong>DRM-protected content</strong> &mdash; Streaming services such as Netflix, Disney+, HBO Max, Amazon Prime Video, Apple TV+, and similar platforms use Encrypted Media Extensions (EME) to protect video content. The extension cannot apply any enhancement to DRM-protected video streams, as modifying them is technically blocked by the browser.</li>
+  <li><strong>Banking portals and payment gateways</strong> &mdash; For security reasons, many financial institutions implement aggressive content protection that prevents any external styling modifications.</li>
+  <li><strong>Browser-internal pages</strong> &mdash; URLs starting with <code>chrome://</code>, <code>chrome-extension://</code>, <code>about:</code>, <code>view-source:</code>, and the Chrome Web Store itself are protected from content script injection by Chrome's security model. The extension is deliberately excluded from these pages.</li>
+  <li><strong>PDF viewers and media players</strong> &mdash; Native browser viewers for PDFs, videos, and images bypass the HTML rendering pipeline and therefore are not affected by the filters.</li>
+  <li><strong>Canvas-rendered or WebGL content</strong> &mdash; Applications that render their entire UI inside a <code>&lt;canvas&gt;</code> element (e.g. some web games, design tools, or graphics editors) may not visually change because CSS filters on the HTML layer do not affect GPU-rendered canvas pixels identically.</li>
+</ul>
+<p>If you encounter a specific page where the extension does not work as expected, this is most likely due to one of the limitations above. We continuously work to expand compatibility where technically feasible and welcome feedback via our support channels.</p>
+
+<hr>
+
+<h2>18. Custom Development</h2>
 <div class="freelancer-box">
-  <strong>&#x1F6E0;&#xFE0F; Need a custom Chrome extension?</strong><br><br>
+  <strong>Need a custom Chrome extension?</strong><br><br>
   As a freelancer, I offer custom plugin development to help you get exactly what you need. Let's discuss your project, and I'll provide a solution that works for you.
   <br><br>
   <a href="mailto:pexxelteam@gmail.com" style="color:#0066cc;font-weight:600">Get in touch &rarr;</a>
@@ -212,33 +213,28 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
 
 <hr>
 
-<h2>18. Contact &amp; Follow Us</h2>
+<h2>19. Contact &amp; Follow Us</h2>
 <p>Questions, privacy concerns, data requests, or support? Reach us through any of the following:</p>
-
 <div class="cms">
   <div class="cm">
-    <span class="ci">&#x2709;&#xFE0F;</span>
     <div class="ct">
       <span class="ct-t">Email</span>
       <span class="ct-d"><a href="mailto:pexxelteam@gmail.com">pexxelteam@gmail.com</a> &mdash; we respond within 48 hours</span>
     </div>
   </div>
   <div class="cm">
-    <span class="ci">&#x1F4CB;</span>
     <div class="ct">
       <span class="ct-t">Support Form</span>
       <span class="ct-d"><a href="https://docs.google.com/forms/d/e/1FAIpQLSfpS69dMp1t_-rr_GhuexWZpbWEJiy7cMvxRaP14fz7P12WkQ/viewform" target="_blank">Open Support Form</a> &mdash; bug reports, privacy questions &amp; general enquiries</span>
     </div>
   </div>
   <div class="cm">
-    <span class="ci">&#x2615;</span>
     <div class="ct">
       <span class="ct-t">Developer</span>
       <span class="ct-d">Raphael Ordson &amp; PexXel Team</span>
     </div>
   </div>
 </div>
-
 <div class="social-row">
   <a href="https://www.facebook.com/PexXelTeam" target="_blank" rel="noopener" class="social-btn">
     <svg width="18" height="18" viewBox="0 0 24 24" fill="#1877F2"><path d="M24 12.07C24 5.41 18.63 0 12 0S0 5.41 0 12.07C0 18.1 4.39 23.1 10.13 24v-8.44H7.08v-3.49h3.04V9.41c0-3.02 1.8-4.7 4.54-4.7 1.31 0 2.68.24 2.68.24v2.97h-1.51c-1.49 0-1.95.93-1.95 1.88v2.27h3.32l-.53 3.49h-2.79V24C19.61 23.1 24 18.1 24 12.07z"/></svg>
@@ -257,23 +253,6 @@ footer{margin-top:60px;padding-top:24px;border-top:1px solid var(--border);font-
     YouTube
   </a>
 </div>
-
-  <section class="section">
-      <h2>Technical Limitations</h2>
-    <p>Due to the nature of web technologies and the diverse security policies implemented by various websites, PexXel Clarity Engine may not apply enhancement filters on every page you visit. The following limitations are inherent to the browser and visited websites, not defects of the extension:</p>
-    <ul>
-          <li><strong>Content Security Policy (CSP)</strong> — Websites enforcing strict CSP directives may prevent injected SVG filters or inline styles from being applied.</li>
-        <li><strong>iframe sandboxing</strong> — Pages rendered inside sandboxed iframes (e.g. embedded third-party widgets, ad frames) are isolated from the extension's filter context.</li>
-        <li><strong>Cross-origin restrictions</strong>strong> — Some resources loaded from different origins are subject to SOP (Same-Origin Policy) and cannot be post-processed by CSS filters.</li>
-        <li><strong>DRM-protected content</strong> — Streaming services such as Netflix, Disney+, HBO Max, Amazon Prime Video, Apple TV+, and similar platforms use Encrypted Media Extensions (EME) to protect video content. The extension cannot apply any enhancement to DRM-protected video streams, as modifying them is technically blocked by the browser.</li>
-        <li><strong>Banking portals and payment gateways</strong> — For security reasons, many financial institutions implement aggressive content protection that prevents any external styling modifications.</li>
-        <li><strong>Browser-internal pages</strong>strong> — URLs starting with chrome://, chrome-extension://, about:, view-source:, and the Chrome Web Store itself are protected from content script injection by Chrome's security model. The extension is deliberately excluded from these pages.</li>
-        <li><strong>PDF viewers and media players</strong> — Native browser viewers for PDFs, videos, and images bypass the HTML rendering pipeline and therefore are not affected by the filters.</li>
-        <li><strong>Pages using canvas-rendered or WebGL content</strong> — Applications that render their entire UI inside a canvas element (e.g. some web games, design tools, or graphics editors) may not visually change because CSS filters on the HTML layer do not affect GPU-rendered canvas pixels identically.</li>
-    </ul>
-    <p>If you encounter a specific page where the extension does not work as expected, this is most likely due to one of the limitations above. We continuously work to expand compatibility where technically feasible and welcome feedback via our support channels.</p>
-  </section>section></p></strong></strong></li></li></strong></strong></li></li></strong></strong></li>
-    </ul></p></h2>
 
 <footer>&copy; 2026 Raphael Ordson &middot; PexXel Team &middot; PexXel Clarity Engine<br>Free trial &mdash; then &pound;5 GBP lifetime &mdash; No Ads &middot; No Tracking &middot; No Subscriptions</footer>
 </div>
